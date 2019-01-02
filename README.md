@@ -1,2 +1,3 @@
 # extra
-ex
+slmgr.vbs /rearm
+slmgr.vbs /dlv
