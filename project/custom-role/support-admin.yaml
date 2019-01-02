@@ -1,0 +1,119 @@
+apiVersion: authorization.openshift.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    authorization.openshift.io/system-only: "true"
+    openshift.io/reconcile-protect: "false"
+  creationTimestamp: null
+  name: support-admin
+rules:
+- apiGroups:
+  - "*"
+  attributeRestrictions: null
+  resources:
+  - apiservices
+  - appliedclusterresourcequotas
+  - batch
+  - bindings
+  - brokertemplateinstances
+  - builds
+  - certificates
+  - certificatesigningrequests
+  - clusternetworks
+  - clusterresourcequotas
+  - componentstatuses
+  - configmaps
+  - controllerrevisions
+  - cronjobs
+  - customresourcedefinitions
+  - daemonsets
+  - deploymentconfigs
+  - deployments
+  - egressnetworkpolicies
+  - endpoints
+  - events
+  - extensions
+  - groups
+  - horizontalpodautoscalers
+  - hostsubnets
+  - identities
+  - images
+  - imagesignatures
+  - imagestreamimages
+  - imagestreammappings
+  - imagestreams
+  - imagestreamtags
+  - ingresses
+  - ingresses/status
+  - jenkins
+  - jobs
+  - limitranges
+  - localresourceaccessreviews
+  - localsubjectaccessreviews
+  - localsubjectaccessreviews
+  - mutatingwebhookconfigurations
+  - networkpolicies
+  - nodes
+  - oauthclientauthorizations
+  - poddisruptionbudgets
+  - podpresets
+  - pods
+  - podsecuritypolicies
+  - podsecuritypolicyreviews
+  - podsecuritypolicyselfsubjectreviews
+  - podsecuritypolicysubjectreviews
+  - podtemplates
+  - policy
+  - priorityclasses
+  - processedtemplates
+  - rangeallocations
+  - replicasets
+  - replicationcontrollers
+  - resourceaccessreviews
+  - resourcequotas
+  - resourcequotausages
+  - routes
+  - securitycontextconstraints
+  - selfsubjectrulesreviews
+  - serviceaccounts
+  - services
+  - statefulsets
+  - storageclasses
+  - subjectaccessreviews
+  - subjectrulesreviews
+  - templateconfigs
+  - templateinstances
+  - templates
+  - thirdpartyresources
+  - tokenreviews
+  - useridentitymappings
+  - users
+  - validatingwebhookconfigurations
+  - volumeattachments
+  verbs:
+  - '*'
+- apiGroups:
+  - "*"
+  attributeRestrictions: null
+  resources:
+  - namespaces
+  - netnamespaces
+  - projects
+  - projectrequests
+  - useridentitymappings
+  - users
+  - roles
+  - rolesbindings
+  - persistentvolumeclaims
+  - persistentvolumes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups: null
+  attributeRestrictions: null
+  nonResourceURLs:
+  - '*'
+  resources: []
+  verbs:
+  - '*'

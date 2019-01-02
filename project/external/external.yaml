@@ -1,0 +1,13 @@
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "external-netcat"
+spec:
+  ports:
+    -
+      name: "netcat"
+      protocol: "TCP"
+      port: 1234
+      targetPort: 1234 
+      nodePort: 0
+selector: {} 

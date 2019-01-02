@@ -1,0 +1,5 @@
+oc patch hostsubnet ocp.192.168.1.30.nip.io -p '{"egressIPs": ["192.168.1.110", "192.168.1.111"]}'
+oc get hostsubnet 
+oc patch netnamespace egress-test -p '{"egressIPs": ["192.168.1.110"]}'
+oc patch hostsubnet node1 -p '{"egressCIDRs": ["192.168.1.0/24"]}'
+oc patch hostsubnet node2 -p '{"egressCIDRs": ["192.168.1.0/24"]}'

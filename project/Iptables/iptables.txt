@@ -1,0 +1,2 @@
+#iptables -t nat -I OPENSHIFT-MASQUERADE -m comment --comment "exempt masquerade pod-to-specific-external-traffic" -s 10.128.0.0/14 -d 192.168.1.0/24 -j ACCEPT
+#iptables -t nat -S OPENSHIFT-MASQUERADE

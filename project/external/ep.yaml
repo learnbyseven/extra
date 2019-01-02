@@ -1,0 +1,13 @@
+kind: "Endpoints"
+apiVersion: "v1"
+metadata:
+  name: "external-netcat" 
+subsets: 
+  -
+    addresses:
+      -
+        ip: "192.168.1.35" 
+    ports:
+      -
+        port: 1234
+        name: "netcat"

@@ -1,0 +1,35 @@
+version: 1.0
+name: db-apb
+description: your description
+bindable: False
+async: optional
+metadata:
+  displayName: db-apb
+plans:
+  - name: silver
+    description: This is silver plan deploys db-apb
+    free: True
+    metadata: {}
+      displayName: Silver
+      longDescription:
+        This plan provides single non-HA mysql w/o persistent storage
+      cost: Rs0.0
+    parameters: []
+      - name: db_name
+        description: The name of the database
+        type: string
+        default: etherpad
+        required: true
+        title: DB name
+      - name: db_user
+        description: Username 
+        type: string
+        default: etherpad
+        required: true
+        maxlength: 63
+      - name: mysql_password
+        default: admin
+        description: Password
+        type: string
+        required: true
+        description: root password

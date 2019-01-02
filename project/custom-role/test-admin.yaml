@@ -1,0 +1,16 @@
+apiVersion: authorization.openshift.io/v1
+kind: ClusterRole
+metadata:
+  annotations:
+    authorization.openshift.io/system-only: "true"
+    openshift.io/reconcile-protect: "false"
+  creationTimestamp: null
+  name: test-admin
+rules:
+- apiGroups:
+  - "*"
+  attributeRestrictions: null
+  resources:
+  - project.openshift.io/v1/projects/default
+  verbs:
+  - '*'

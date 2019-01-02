@@ -1,0 +1,15 @@
+kind: "Service"
+apiVersion: "v1"
+metadata:
+  name: "external-service"
+spec:
+  type: ExternalName
+  externalName: 192.168.1.35
+  ports:
+    -
+      name: "name"
+      protocol: "TCP"
+      port: 1234
+      targetPort: 1234 
+      nodePort: 0
+selector: {} 
