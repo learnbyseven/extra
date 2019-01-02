@@ -1,0 +1,35 @@
+[OSEv3:children]
+masters
+nodes
+etcd
+[OSEv3:vars]
+ansible_ssh_user=root
+ansible_become=true 
+os_sdn_network_plugin_name='redhat/openshift-ovs-networkpolicy'
+deployment_type=openshift-enterprise
+openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+openshift_clock_enabled=true
+openshift_master_default_subdomain=cloudapps.ocp.192.168.1.30.nip.io
+openshift_disable_check=docker_storage,memory_availability,disk_availability,docker_image_availability,package_version
+os_firewall_use_firewalld=True
+openshift_enable_unsupported_configurations=True
+#openshift_logging_install_logging=false
+#openshift_metrics_install_metrics=false
+template_service_broker_install=true
+ansible_service_broker_install=true
+openshift_enable_service_catalog=true
+openshift_cluster_monitoring_operator_install=true
+openshift_deployment_type=openshift-enterprise
+oreg_url=registry.redhat.io/openshift3/ose-${component}:${version}
+oreg_auth_user=rhn-support-grajawat
+oreg_auth_password=Nenu@123
+openshift_prometheus_state=present
+#openshift_metrics_install_metrics=true
+openshift_examples_modify_imagestreams=true
+openshift_cluster_monitoring_operator_install=true
+[masters]
+ocp.192.168.1.30.nip.io
+[nodes]
+ocp.192.168.1.30.nip.io openshift_node_group_name="node-config-all-in-one"
+[etcd]
+ocp.192.168.1.30.nip.io
